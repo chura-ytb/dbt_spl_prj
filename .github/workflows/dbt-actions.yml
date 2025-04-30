@@ -26,4 +26,4 @@ jobs:
         - name: execute sqlfluff
           working-directory: dbt_spl
           run: |
-            sqlfluff fix ./dbt_spl/models/mart/mart_kill_rate_and_abilities.sql
+            sqlfluff fix ./models/mart/mart_kill_rate_and_abilities.sql
