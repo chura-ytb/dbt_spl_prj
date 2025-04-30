@@ -1,5 +1,5 @@
 select 
-    a.*,
+    a.*, 
     b.ability_name,  
     b.ability_value 
 from {{ref('int_kill_rate')}} as a
