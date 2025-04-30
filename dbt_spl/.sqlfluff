@@ -1,0 +1,13 @@
+[sqlfulff:templater:dbt]
+project_dir = ./
+profiles_dir = ./
+profile = dbt_spl
+target = dev
+
+
+[sqlfluff]
+templater = dbt
+dialect = snowflake
+
+# ルールの中から取り除くものを選ぶ
+# exclude_rules = L036

@@ -1,0 +1,288 @@
+version: 2
+
+sources:
+  - name: spl_raw
+    database: tobi_training_db
+    schema: spl_raw
+    #quoting:
+    #  database: true
+    tables:
+      - name: raw_battle_results
+        description: 未加工のバトルリザルトログ
+        columns:
+          - name: season
+            description: シーズン
+            column_type: varchar
+          - name: period
+            description: ピリオド
+            column_type: varchar
+          - name: game_ver
+            description: ゲームバージョン
+            column_type: varchar
+          - name: lobby
+            description: ロビー種別
+            column_type: varchar
+          - name: mode
+            description: モード
+            column_type: varchar
+          - name: stage
+            description: ステージ
+            column_type: varchar
+          - name: time
+            description: バトルタイム
+            column_type: varchar
+          - name: win
+            description: 勝利チーム
+            column_type: varchar
+          - name: knockout
+            description: ノックアウトフラグ
+            column_type: varchar
+          - name: rank
+            description: ランク
+            column_type: varchar
+          - name: power
+            description: Xパワー
+            column_type: varchar
+          - name: alpha_inked
+            description: アルファチーム塗りポイント
+            column_type: varchar
+          - name: alpha_ink_percent
+            description: アルファチーム塗りパーセント
+            column_type: varchar
+          - name: alpha_count
+            description: アルファチームカウント
+            column_type: varchar
+          - name: alpha_color
+            description: アルファチームカラー
+            column_type: varchar
+          - name: alpha_theme
+            description: アルファチームテーマ
+            column_type: varchar
+          - name: bravo_inked
+            description: ブラボーチーム塗りポイント
+            column_type: varchar
+          - name: bravo_ink_percent
+            description: ブラボーチーム塗りパーセント
+            column_type: varchar
+          - name: bravo_count
+            description: ブラボーチームカウント
+            column_type: varchar
+          - name: bravo_color
+            description: ブラボーチームカラー
+            column_type: varchar
+          - name: bravo_theme
+            description: ブラボーチームテーマ
+            column_type: varchar
+          - name: A1_weapon
+            description: A1ブキ
+            column_type: varchar
+          - name: A1_kill_assist
+            description: A1キル
+            column_type: varchar
+          - name: A1_kill
+            description: A1キル数
+            column_type: varchar
+          - name: A1_assist
+            description: A1アシスト数
+            column_type: varchar
+          - name: A1_death
+            description: A1デス数
+            column_type: varchar
+          - name: A1_special
+            description: A1スペシャル使用回数
+            column_type: varchar
+          - name: A1_inked
+            description: A1塗りポイント
+            column_type: varchar
+          - name: A1_abilities
+            description: A1アビリティ
+            column_type: varchar
+          - name: A2_weapon
+            description: A2ブキ
+            column_type: varchar
+          - name: A2_kill_assist
+            description: A2キル・アシスト数合計
+            column_type: varchar
+          - name: A2_kill
+            description: A2キル数
+            column_type: varchar
+          - name: A2_assist
+            description: A2アシスト数
+            column_type: varchar
+          - name: A2_death
+            description: A2デス数
+            column_type: varchar
+          - name: A2_special
+            description: A2スペシャル使用回数
+            column_type: varchar
+          - name: A2_inked
+            description: A2塗りポイント
+            column_type: varchar
+          - name: A2_abilities
+            description: A2アビリティ
+            column_type: varchar
+          - name: A3_weapon
+            description: A3ブキ
+            column_type: varchar
+          - name: A3_kill_assist
+            description: A3キル・アシスト数合計
+            column_type: varchar
+          - name: A3_kill
+            description: A3キル数
+            column_type: varchar
+          - name: A3_assist
+            description: A3アシスト数
+            column_type: varchar
+          - name: A3_death
+            description: A3デス数
+            column_type: varchar
+          - name: A3_special
+            description: A3スペシャル使用回数
+            column_type: varchar
+          - name: A3_inked
+            description: A3塗りポイント
+            column_type: varchar
+          - name: A3_abilities
+            description: A3アビリティ
+            column_type: varchar
+          - name: A4_weapon
+            description: A4ブキ
+            column_type: varchar
+          - name: A4_kill_assist
+            description: A4キル・アシスト数合計
+            column_type: varchar
+          - name: A4_kill
+            description: A4キル数
+            column_type: varchar
+          - name: A4_assist
+            description: A4アシスト数
+            column_type: varchar
+          - name: A4_death
+            description: A4デス数
+            column_type: varchar
+          - name: A4_special
+            description: A4スペシャル使用回数
+            column_type: varchar
+          - name: A4_inked
+            description: A4塗りポイント
+            column_type: varchar
+          - name: A4_abilities
+            description: A4アビリティ
+            column_type: varchar
+          - name: B1_weapon
+            description: B1ブキ
+            column_type: varchar
+          - name: B1_kill_assist
+            description: B1キル・アシスト数合計
+            column_type: varchar
+          - name: B1_kill
+            description: B1キル数
+            column_type: varchar
+          - name: B1_assist
+            description: B1アシスト数
+            column_type: varchar
+          - name: B1_death
+            description: B1デス数
+            column_type: varchar
+          - name: B1_special
+            description: B1スペシャル使用回数
+            column_type: varchar
+          - name: B1_inked
+            description: B1塗りポイント
+            column_type: varchar
+          - name: B1_abilities
+            description: B1アビリティ
+            column_type: varchar
+          - name: B2_weapon
+            description: B2ブキ
+            column_type: varchar
+          - name: B2_kill_assist
+            description: B2キル・アシスト数合計
+            column_type: varchar
+          - name: B2_kill
+            description: B2キル数
+            column_type: varchar
+          - name: B2_assist
+            description: B2アシスト数
+            column_type: varchar
+          - name: B2_death
+            description: B2デス数
+            column_type: varchar
+          - name: B2_special
+            description: B2スペシャル使用回数
+            column_type: varchar
+          - name: B2_inked
+            description: B2塗りポイント
+            column_type: varchar
+          - name: B2_abilities
+            description: B2アビリティ
+            column_type: varchar
+          - name: B3_weapon
+            description: B3ブキ
+            column_type: varchar
+          - name: B3_kill_assist
+            description: B3キル・アシスト数合計
+            column_type: varchar
+          - name: B3_kill
+            description: B3キル数
+            column_type: varchar
+          - name: B3_assist
+            description: B3アシスト数
+            column_type: varchar
+          - name: B3_death
+            description: B3デス数
+            column_type: varchar
+          - name: B3_special
+            description: B3スペシャル使用回数
+            column_type: varchar
+          - name: B3_inked
+            description: B3塗りポイント
+            column_type: varchar
+          - name: B3_abilities
+            description: B3アビリティ
+            column_type: varchar
+          - name: B4_weapon
+            description: B4ブキ
+            column_type: varchar
+          - name: B4_kill_assist
+            description: B4キル・アシスト数合計
+            column_type: varchar
+          - name: B4_kill
+            description: B4キル数
+            column_type: varchar
+          - name: B4_assist
+            description: B4アシスト数
+            column_type: varchar
+          - name: B4_death
+            description: B4デス数
+            column_type: varchar
+          - name: B4_special
+            description: B4スペシャル使用回数
+            column_type: varchar
+          - name: B4_inked
+            description: B4塗りポイント
+            column_type: varchar
+          - name: B4_abilities
+            description: B4アビリティ
+            column_type: varchar
+          - name: medal1_grade
+            description: メダル1グレード
+            column_type: varchar
+          - name: medal1_name
+            description: メダル1名前
+            column_type: varchar
+          - name: medal2_grade
+            description: メダル2グレード
+            column_type: varchar
+          - name: medal2_name
+            description: メダル2名前
+            column_type: varchar
+          - name: medal3_grade
+            description: メダル3グレード
+            column_type: varchar
+          - name: medal3_name
+            description: メダル3名前
+            column_type: varchar
+          - name: event
+            description: イベント
+            column_type: varchar

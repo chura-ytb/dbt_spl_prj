@@ -1,0 +1,7 @@
+LOBBY_CODE,LOBBY_TYPE
+L001,xmatch
+L002,regular
+L003,bankara_open
+L004,bankara_challenge
+L005,splatfest_open
+L006,splatfest_challenge

@@ -1,0 +1,15 @@
+version: 2
+
+seeds:
+  - name: lobby_master
+    description: ロビー種別マスタ（オリジナルに対してコード値追加）
+    columns:
+      - name: LOBBY_CODE
+        description: ロビーコード
+        data_tests:
+          - unique
+          - not_null
+      - name: LOBBY_TYPE
+        description: ロビー種別名
+        data_tests:
+          - not_null

@@ -1,0 +1,62 @@
+version: 2
+
+models:
+  - name: int_abilities_log
+    description: A*_****やB*_****のようなカラムを1レコードずつに分割したテーブル
+    columns: 
+      - name: battle_id
+        description: バトルID
+      - name: win
+        description: 勝利チーム
+      - name: team
+        description: 所属チーム
+      - name: member_id
+        description: メンバーID
+      - name: ability_name
+        description: アビリティ名
+      - name: ability_value
+        description: アビリティ値
+
+  - name: int_battle_stage_list
+    description: バトルステージのみを抽出したテーブル(重複削除) 
+    columns: 
+      - name: battle_stage
+        description: ステージ名
+
+  - name: int_kill_rate
+    description: 1レコードに存在する8人分のキルレートを8レコードに分割
+    columns:
+      - name: battle_id
+        description: バトルID
+      - name: win
+        description: 勝利チーム
+      - name: team
+        description: 所属チーム
+      - name: weapon
+        description: ブキ
+      - name: kill_assist
+        description: キル・アシスト数合計
+      - name: kill
+        description: キル数
+      - name: assist
+        description: アシスト数
+      - name: death
+        description: デス数
+      - name: special
+        description: スペシャル使用回数
+      - name: inked
+        description: 塗りポイント
+      - name: abilities
+        description: アビリティ
+
+  - name: int_lobby_list
+    description: ロビー一覧テーブル（重複削除）
+    columns:
+      - name: lobby
+        description: ロビー名
+
+  - name: int_weapon_list
+    description: ブキ一覧テーブル（重複削除）
+    columns:
+      - name: weapons
+        description: ブキ名
