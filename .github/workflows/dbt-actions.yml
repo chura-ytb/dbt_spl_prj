@@ -36,6 +36,9 @@ jobs:
             pip install sqlfluff
             pip install sqlfluff-templater-dbt
             pip install dbt-snowflake
+        
+        - name: Install dependencies
+          run: dbt deps
 
         - name: execute sqlfluff
           working-directory: dbt_spl
