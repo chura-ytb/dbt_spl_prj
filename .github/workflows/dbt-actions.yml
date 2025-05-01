@@ -8,6 +8,8 @@ jobs:
     push:
         runs-on: ubuntu-latest
 
+        environment: tb_env
+
         env:
           DWH_TYPE: ${{ secrets.DWH_TYPE }}
           SNOWFLAKE_ACCOUNT: ${{ secrets.SNOWFLAKE_ACCOUNT }}
