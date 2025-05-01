@@ -8,7 +8,8 @@ dbt_spl:
       threads: 1
       type: "{{ env_var('DWH_TYPE') }}"
       user: "{{ env_var('SNOWFLAKE_USER') }}"
-      private_key_path : "{{ env_var('SNOWFLAKE_KEY_PATH') }}"
+      private_key: "{{ env_var('SNOWFLAKE_PRIVATE_KEY') }}"
+      # private_key_path : "{{ env_var('SNOWFLAKE_KEY_PATH') }}"
       private_key_passphrase: "{{ env_var('SNOWFLAKE_PASSPHRASE') }}"
       warehouse: "{{ env_var('SNOWFLAKE_WAREHOUSE') }}"
   target: dev
