@@ -9,16 +9,16 @@ jobs:
         runs-on: ubuntu-latest
 
         env:
-          DWH_TYPE: ${{ secrets.DWH_TYPE }
-          SNOWFLAKE_ACCOUNT: ${{ secrets.SNOWFLAKE_ACCOUNT }
-          SNOWFLAKE_DATABASE: ${{ secrets.SNOWFLAKE_DATABASE }
-          SNOWFLAKE_SCHEMA: ${{ secrets.SNOWFLAKE_SCHEMA }
-          SNOWFLAKE_ROLE: ${{ secrets.SNOWFLAKE_ROLE }
-          SNOWFLAKE_WAREHOUSE: ${{ secrets.SNOWFLAKE_WAREHOUSE }
-          SNOWFLAKE_USER: ${{ secrets.SNOWFLAKE_USER }
-          SNOWFLAKE_PRIVATE_KEY: ${{ secrets.SNOWFLAKE_PRIVATE_KEY }
-          # SNOWFLAKE_KEY_PATH: ${{ secrets.SNOWFLAKE_KEY_PATH }
-          SNOWFLAKE_PASSPHRASE: ${{ secrets.SNOWFLAKE_PASSPHRASE }
+          DWH_TYPE: ${{ secrets.DWH_TYPE }}
+          SNOWFLAKE_ACCOUNT: ${{ secrets.SNOWFLAKE_ACCOUNT }}
+          SNOWFLAKE_DATABASE: ${{ secrets.SNOWFLAKE_DATABASE }}
+          SNOWFLAKE_SCHEMA: ${{ secrets.SNOWFLAKE_SCHEMA }}
+          SNOWFLAKE_ROLE: ${{ secrets.SNOWFLAKE_ROLE }}
+          SNOWFLAKE_WAREHOUSE: ${{ secrets.SNOWFLAKE_WAREHOUSE }}
+          SNOWFLAKE_USER: ${{ secrets.SNOWFLAKE_USER }}
+          SNOWFLAKE_PRIVATE_KEY: ${{ secrets.SNOWFLAKE_PRIVATE_KEY }}
+          # SNOWFLAKE_KEY_PATH: ${{ secrets.SNOWFLAKE_KEY_PATH }}
+          SNOWFLAKE_PASSPHRASE: ${{ secrets.SNOWFLAKE_PASSPHRASE }}
 
         steps:
         - name: Check out
