@@ -7,6 +7,9 @@ on:
 jobs:
     push:
         runs-on: ubuntu-latest
+        defaults:
+          run:
+            working-directory: dbt_spl
 
         environment: tb_env
 
@@ -41,6 +44,5 @@ jobs:
           run: dbt deps
 
         - name: execute sqlfluff
-          working-directory: dbt_spl
           run: |
-            sqlfluff fix ./models/mart/mart_kill_rate_and_abilities.sql
+            sqlfluff lint models/mart
