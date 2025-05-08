@@ -22,7 +22,7 @@ jobs:
           SNOWFLAKE_WAREHOUSE: ${{ secrets.SNOWFLAKE_WAREHOUSE }}
           SNOWFLAKE_USER: ${{ secrets.SNOWFLAKE_USER }}
           SNOWFLAKE_PRIVATE_KEY: ${{ secrets.SNOWFLAKE_PRIVATE_KEY }}
-          # SNOWFLAKE_KEY_PATH: ${{ secrets.SNOWFLAKE_KEY_PATH }}
+          # SNOWFLAKE_KEY_PATH: ${{ secrets.SNOWFLAKE_KEY_PATH }} 
           SNOWFLAKE_PASSPHRASE: ${{ secrets.SNOWFLAKE_PASSPHRASE }}
 
         steps:
