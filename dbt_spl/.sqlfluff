@@ -33,7 +33,7 @@ aliasing = explicit
 [sqlfluff:rules:aliasing.expression]
 allow_scalar = false
 
-# 引用符で囲まれてい識別子が小文字
+# 引用符で囲まれている識別子が小文字
 [sqlfluff:rules:capitalisation.identifiers]
 extended_capitalisation_policy = lower
 
