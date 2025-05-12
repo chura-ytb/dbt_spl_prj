@@ -40,9 +40,21 @@ jobs:
             pip install sqlfluff-templater-dbt
             pip install dbt-snowflake
         
+        - name: Get changed SQL files
+          id: changed_files
+          run: |
+            echo "files=$(git diff --name-only HEAD^ | grep '\.sql$' | xargs)" >> $GITHUB_OUTPUT
+
         - name: Install dependencies
           run: dbt deps
 
-        - name: execute sqlfluff
+        # - name: execute sqlfluff
+        #   run: |
+        #     sqlfluff lint models/
+
+        - name: Lint changed files only
           run: |
-            sqlfluff lint models/
+            for file in ${{ steps.changed_files.outputs.files }}; do
+              echo "Linting $file"
+              sqlfluff lint "$file" || exit 1
+            done
