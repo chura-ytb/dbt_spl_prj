@@ -1,2 +1,2 @@
 select *
-from {{ref('dwh_battle_results')}}
+from {{ ref('dwh_battle_results') }}

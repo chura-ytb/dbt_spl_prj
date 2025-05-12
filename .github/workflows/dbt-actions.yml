@@ -7,6 +7,23 @@ on:
 jobs:
     push:
         runs-on: ubuntu-latest
+        defaults:
+          run:
+            working-directory: dbt_spl
+
+        environment: tb_env
+
+        env:
+          DWH_TYPE: ${{ secrets.DWH_TYPE }}
+          SNOWFLAKE_ACCOUNT: ${{ secrets.SNOWFLAKE_ACCOUNT }}
+          SNOWFLAKE_DATABASE: ${{ secrets.SNOWFLAKE_DATABASE }}
+          SNOWFLAKE_SCHEMA: ${{ secrets.SNOWFLAKE_SCHEMA }}
+          SNOWFLAKE_ROLE: ${{ secrets.SNOWFLAKE_ROLE }}
+          SNOWFLAKE_WAREHOUSE: ${{ secrets.SNOWFLAKE_WAREHOUSE }}
+          SNOWFLAKE_USER: ${{ secrets.SNOWFLAKE_USER }}
+          SNOWFLAKE_PRIVATE_KEY: ${{ secrets.SNOWFLAKE_PRIVATE_KEY }}
+          # SNOWFLAKE_KEY_PATH: ${{ secrets.SNOWFLAKE_KEY_PATH }}
+          SNOWFLAKE_PASSPHRASE: ${{ secrets.SNOWFLAKE_PASSPHRASE }}
 
         steps:
         - name: Check out
@@ -22,8 +39,10 @@ jobs:
             pip install sqlfluff
             pip install sqlfluff-templater-dbt
             pip install dbt-snowflake
+        
+        - name: Install dependencies
+          run: dbt deps
 
         - name: execute sqlfluff
-          working-directory: dbt_spl
           run: |
-            sqlfluff fix ./models/mart/mart_kill_rate_and_abilities.sql
+            sqlfluff lint models/

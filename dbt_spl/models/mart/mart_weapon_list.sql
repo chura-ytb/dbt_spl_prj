@@ -1,2 +1,2 @@
 select weapon
-from {{ref('int_weapon_list')}}
+from {{ ref('int_weapon_list') }}

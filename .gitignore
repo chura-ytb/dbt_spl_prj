@@ -1,1 +1,3 @@
 dbt_spl_prj.code-workspace
+.envrc
+logs
