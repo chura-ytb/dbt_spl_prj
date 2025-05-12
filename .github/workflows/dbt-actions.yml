@@ -45,4 +45,4 @@ jobs:
 
         - name: execute sqlfluff
           run: |
-            sqlfluff lint models/mart
+            sqlfluff lint models/

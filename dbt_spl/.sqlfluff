@@ -10,7 +10,7 @@ templater = dbt
 dialect = snowflake
 
 # ルールの中から取り除くものを選ぶ
-# exclude_rules = L036
+exclude_rules = LT01
 
 # 後ろカンマ
 [sqlfluff:layout:type:comma]
