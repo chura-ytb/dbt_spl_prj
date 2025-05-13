@@ -7,9 +7,9 @@ on:
 jobs:
     push:
         runs-on: ubuntu-latest
-        # defaults:
-        #   run:
-        #     working-directory: dbt_spl
+        defaults:
+          run:
+            working-directory: dbt_spl
 
         environment: tb_env
 
@@ -43,11 +43,6 @@ jobs:
             pip install sqlfluff-templater-dbt
             pip install dbt-snowflake
         
-        - name: Get changed SQL files
-          id: changed_files
-          run: |
-            echo "files=$(git diff --name-only $GITHUB_SHA^ $GITHUB_SHA | grep '\.sql$' | xargs)" >> $GITHUB_OUTPUT
-
         - name: Install dependencies
           run: dbt deps
 
@@ -55,9 +50,19 @@ jobs:
         #   run: |
         #     sqlfluff lint models/
 
-        - name: Lint changed files only
+        - name: Get changed SQL files (compared to previous commit)
+          id: changed
           run: |
-            for file in ${{ steps.changed_files.outputs.files }}; do
+            git diff --name-only ${{ github.event.before }} ${{ github.sha }} \
+              | grep '\.sql$' || echo "" > changed_files.txt
+            git diff --name-only ${{ github.event.before }} ${{ github.sha }} \
+              | grep '\.sql$' > changed_files.txt || true
+            echo "files=$(cat changed_files.txt)" >> $GITHUB_OUTPUT
+
+        - name: Run sqlfluff lint only on changed SQL files
+          if: steps.changed.outputs.files != ''
+          run: |
+            for file in ${{ steps.changed.outputs.files }}; do
               echo "Linting $file"
               sqlfluff lint "$file" || exit 1
             done
