@@ -43,7 +43,7 @@ jobs:
         - name: Get changed SQL files
           id: changed_files
           run: |
-            echo "files=$(git diff --name-only HEAD^ | grep '\.sql$' | xargs)" >> $GITHUB_OUTPUT
+            echo "files=$(git diff --name-only origin/${{ github.base_ref }} | grep '\.sql$' | xargs)" >> $GITHUB_OUTPUT
 
         - name: Install dependencies
           run: dbt deps
