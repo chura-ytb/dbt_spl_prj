@@ -7,9 +7,9 @@ on:
 jobs:
     push:
         runs-on: ubuntu-latest
-        defaults:
-          run:
-            working-directory: dbt_spl
+        # defaults:
+        #   run:
+        #     working-directory: dbt_spl
 
         environment: tb_env
 
