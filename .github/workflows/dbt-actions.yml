@@ -57,7 +57,7 @@ jobs:
               | grep '\.sql$' || echo "" > changed_files.txt
             git diff --name-only ${{ github.event.before }} ${{ github.sha }} \
               | grep '\.sql$' > changed_files.txt || true
-            echo "files=$(sed 's/dbt_spl\//g' changed_files.txt)" >> $GITHUB_OUTPUT
+            echo "files=$(sed 's/dbt_spl\///g' changed_files.txt)" >> $GITHUB_OUTPUT
 
         - name: Run sqlfluff lint only on changed SQL files
           if: steps.changed.outputs.files != ''
