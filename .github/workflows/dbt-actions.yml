@@ -62,6 +62,7 @@ jobs:
         - name: Run sqlfluff lint only on changed SQL files
           if: steps.changed.outputs.files != ''
           run: |
+            cd ..
             for file in ${{ steps.changed.outputs.files }}; do
               echo "Linting $file"
               sqlfluff lint "$file" || exit 1
