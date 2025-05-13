@@ -28,6 +28,9 @@ jobs:
         steps:
         - name: Check out
           uses: actions/checkout@v4
+          with:
+            fetch-depth: 0  # 差分を取得するには全履歴が必要
+
 
         - uses: actions/setup-python@v5
           with:
@@ -43,7 +46,7 @@ jobs:
         - name: Get changed SQL files
           id: changed_files
           run: |
-            echo "files=$(git diff --name-only origin/${{ github.base_ref }} | grep '\.sql$' | xargs)" >> $GITHUB_OUTPUT
+            echo "files=$(git diff --name-only $GITHUB_SHA^ $GITHUB_SHA | grep '\.sql$' | xargs)" >> $GITHUB_OUTPUT
 
         - name: Install dependencies
           run: dbt deps
