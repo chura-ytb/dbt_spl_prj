@@ -6,7 +6,7 @@ with create_battle_id as (
             partition by season, battle_period
             order by battle_period
         ) as row_num
-    from {{ref('cln_battle_results') }}
+    from {{ref('cln_battle_results')}}
 )
 
 select

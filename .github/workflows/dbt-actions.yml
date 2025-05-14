@@ -67,5 +67,5 @@ jobs:
           run: |
             echo "${{ steps.changed.outputs.changed_files }}" | while IFS= read -r file; do
               echo "Linting $file"
-              sqlfluff lint "$file" || exit 1
+              sqlfluff fix "$file" || exit 1
             done
