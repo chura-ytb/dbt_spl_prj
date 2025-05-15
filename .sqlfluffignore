@@ -1,4 +1,4 @@
-dbt_packages/
-macros/
-target/
-dbt_modules/
+dbt_spl/dbt_packages/
+dbt_spl/macros/
+dbt_spl/target/
+dbt_spl/dbt_modules/

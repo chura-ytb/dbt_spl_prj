@@ -1,2 +1,0 @@
-models/intermediate/battle_results/int_battle_results.sql
-models/intermediate/cutout/int_battle_stage_list.sql

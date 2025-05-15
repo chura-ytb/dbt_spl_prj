@@ -3,7 +3,7 @@ with
 {% for key, value in dict_val.items() %}
     {% for i in range(1, 5) %}
         {{ key }}{{ i }} as (
-            select 
+            select
                 t.battle_id,
                 t.season,
                 t.battle_period,
@@ -12,12 +12,12 @@ with
                 '{{ key }}{{ i }}' as member_id,
                 obj.key as ability_name,
                 cast(obj.value as number(38, 1)) as ability_value
-            from 
-                {{ ref('int_battle_results') }} as t, 
+            from
+                {{ ref('int_battle_results') }} as t,
                 lateral flatten(
                     input => parse_json(t.{{ key }}{{ i }}_abilities)
                 ) as obj
-        ), 
+        ),
     {% endfor %}
 {% endfor %}
 final as (
@@ -34,7 +34,7 @@ final as (
     {% endfor %}
 )
 
-select * 
+select *
 from final
 
 ----------------------------------------------------------------

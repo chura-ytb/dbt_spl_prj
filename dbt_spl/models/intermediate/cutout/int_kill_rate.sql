@@ -36,7 +36,7 @@ final as (
     {% endfor %}
 )
 
-select * 
+select *
 from final
 
 
