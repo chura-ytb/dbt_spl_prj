@@ -6,6 +6,8 @@ models:
     columns: 
       - name: battle_id
         description: バトルID
+        tests:
+          - not_null
 
       - name: season
         description: シーズン
