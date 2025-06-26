@@ -28,6 +28,9 @@ jobs:
         steps:
         - name: Check out
           uses: actions/checkout@v4
+          with:
+            fetch-depth: 0  # 差分を取得するには全履歴が必要
+
 
         - uses: actions/setup-python@v5
           with:
@@ -38,11 +41,31 @@ jobs:
             python -m pip install --upgrade pip
             pip install sqlfluff
             pip install sqlfluff-templater-dbt
-            pip install dbt-snowflake
+            pip install dbt-core dbt-snowflake
         
         - name: Install dependencies
           run: dbt deps
 
-        - name: execute sqlfluff
+        # - name: execute sqlfluff
+        #   run: |
+        #     sqlfluff lint models/
+
+        - name: Get changed SQL files (compared to previous commit)
+          id: changed
           run: |
-            sqlfluff lint models/
+            git diff --name-only ${{ github.event.before }} ${{ github.sha }} \
+              | grep '\.sql$' || echo "" > changed_files.txt
+            git diff --name-only ${{ github.event.before }} ${{ github.sha }} \
+              | grep '\.sql$' | sed 's/dbt_spl\///g' > changed_files.txt || true
+            
+            echo "changed_files<<EOF" >> $GITHUB_OUTPUT
+            cat changed_files.txt >> $GITHUB_OUTPUT
+            echo "EOF" >> $GITHUB_OUTPUT
+
+        - name: Run sqlfluff lint only on changed SQL files
+          if: steps.changed.outputs.changed_files != ''
+          run: |
+            echo "${{ steps.changed.outputs.changed_files }}" | while IFS= read -r file; do
+              echo "Linting $file"
+              sqlfluff lint "$file" || exit 1
+            done

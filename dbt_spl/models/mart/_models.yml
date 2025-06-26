@@ -1,7 +1,29 @@
 version: 2
 
-models: 
-  - name: int_battle_results
+models:
+  - name: mart_abilities_log
+    description: A*_****やB*_****のようなカラムを1レコードずつに分割したテーブル
+    columns: 
+      - name: battle_id
+        description: バトルID
+
+      - name: win
+        description: 勝利チーム
+
+      - name: team
+        description: 所属チーム
+
+      - name: member_id
+        description: メンバーID
+
+      - name: ability_name
+        description: アビリティ名
+
+      - name: ability_value
+        description: アビリティ値
+
+
+  - name: mart_battle_results
     description: バトルリザルトログ
     columns: 
       - name: battle_id
@@ -285,3 +307,77 @@ models:
       - name: event_name
         description: イベント
 
+
+  - name: mart_kill_rate
+    description: 1レコードに存在する8人分のキルレートを8レコードに分割
+    columns:
+      - name: battle_id
+        description: バトルID
+      - name: season
+        description: シーズン
+      - name: battle_period
+        description: ピリオド
+      - name: win
+        description: 勝利チーム
+      - name: team
+        description: チーム
+      - name: member_id
+        description: メンバーID
+      - name: weapon
+        description: ブキ
+      - name: kill_assist
+        description: キル・アシスト数合計
+      - name: kill
+        description: キル数
+      - name: assist
+        description: アシスト数
+      - name: death
+        description: デス数
+      - name: special
+        description: スペシャル使用回数
+      - name: inked
+        description: 塗りポイント
+      - name: abilities
+        description: アビリティ
+
+  - name: mart_kill_rate_and_abilities
+    description: 1レコードに存在する8人分のキルレートを8レコードに分割し、更にアビリティ１つずつに分割
+    columns:
+      - name: battle_id
+        description: バトルID
+      - name: season
+        description: シーズン
+      - name: battle_period
+        description: ピリオド
+      - name: win
+        description: 勝利チーム
+      - name: team
+        description: チーム
+      - name: member_id
+        description: メンバーID
+      - name: weapon
+        description: ブキ
+      - name: kill_assist
+        description: キル・アシスト数合計
+      - name: kill
+        description: キル数
+      - name: assist
+        description: アシスト数
+      - name: death
+        description: デス数
+      - name: special
+        description: スペシャル使用回数
+      - name: inked
+        description: 塗りポイント
+      - name: abilities
+        description: アビリティ
+      - name: ability_name
+        description: アビリティ名
+      - name: ability_value
+        description: アビリティポイント
+
+  - name: mart_weapon_list
+    description: ブキマスタ
+    columns:
+      - name: weapon
+        description: ブキ        
