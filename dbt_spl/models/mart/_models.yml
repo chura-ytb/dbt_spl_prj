@@ -1,0 +1,383 @@
+version: 2
+
+models:
+  - name: mart_abilities_log
+    description: A*_****やB*_****のようなカラムを1レコードずつに分割したテーブル
+    columns: 
+      - name: battle_id
+        description: バトルID
+
+      - name: win
+        description: 勝利チーム
+
+      - name: team
+        description: 所属チーム
+
+      - name: member_id
+        description: メンバーID
+
+      - name: ability_name
+        description: アビリティ名
+
+      - name: ability_value
+        description: アビリティ値
+
+
+  - name: mart_battle_results
+    description: バトルリザルトログ
+    columns: 
+      - name: battle_id
+        description: バトルID
+        tests:
+          - not_null
+
+      - name: season
+        description: シーズン
+
+      - name: battle_period
+        description: ピリオド
+
+      - name: game_ver
+        description: ゲームバージョン
+
+      - name: lobby
+        description: ロビー種別
+
+      - name: battle_mode
+        description: モード
+
+      - name: battle_stage
+        description: ステージ
+
+      - name: battle_time
+        description: バトルタイム
+
+      - name: win
+        description: 勝利チーム
+
+      - name: knockout
+        description: ノックアウトフラグ
+
+      - name: battle_rank
+        description: ランク
+
+      - name: power
+        description: Xパワー
+
+      - name: alpha_inked
+        description: アルファチーム塗りポイント
+
+      - name: alpha_ink_percent
+        description: アルファチーム塗りパーセント
+
+      - name: alpha_count
+        description: アルファチームカウント
+
+      - name: alpha_color
+        description: アルファチームカラー
+
+      - name: alpha_theme
+        description: アルファチームテーマ
+
+      - name: bravo_inked
+        description: ブラボーチーム塗りポイント
+
+      - name: bravo_ink_percent
+        description: ブラボーチーム塗りパーセント
+
+      - name: bravo_count
+        description: ブラボーチームカウント
+
+      - name: bravo_color
+        description: ブラボーチームカラー
+
+      - name: bravo_theme
+        description: ブラボーチームテーマ
+
+      - name: A1_weapon
+        description: A1ブキ
+
+      - name: A1_kill_assist
+        description: A1キル・アシスト数合計
+
+      - name: A1_kill
+        description: A1キル数
+
+      - name: A1_assist
+        description: A1アシスト数
+
+      - name: A1_death
+        description: A1デス数
+
+      - name: A1_special
+        description: A1スペシャル使用回数
+
+      - name: A1_inked
+        description: A1塗りポイント
+
+      - name: A1_abilities
+        description: A1アビリティ
+
+      - name: A2_weapon
+        description: A2ブキ
+
+      - name: A2_kill_assist
+        description: A2キル・アシスト数合計
+
+      - name: A2_kill
+        description: A2キル数
+
+      - name: A2_assist
+        description: A2アシスト数
+
+      - name: A2_death
+        description: A2デス数
+
+      - name: A2_special
+        description: A2スペシャル使用回数
+
+      - name: A2_inked
+        description: A2塗りポイント
+
+      - name: A2_abilities
+        description: A2アビリティ
+
+      - name: A3_weapon
+        description: A3ブキ
+
+      - name: A3_kill_assist
+        description: A3キル・アシスト数合計
+
+      - name: A3_kill
+        description: A3キル数
+
+      - name: A3_assist
+        description: A3アシスト数
+
+      - name: A3_death
+        description: A3デス数
+
+      - name: A3_special
+        description: A3スペシャル使用回数
+
+      - name: A3_inked
+        description: A3塗りポイント
+
+      - name: A3_abilities
+        description: A3アビリティ
+
+      - name: A4_weapon
+        description: A4ブキ
+
+      - name: A4_kill_assist
+        description: A4キル・アシスト数合計
+
+      - name: A4_kill
+        description: A4キル数
+
+      - name: A4_assist
+        description: A4アシスト数
+
+      - name: A4_death
+        description: A4デス数
+
+      - name: A4_special
+        description: A4スペシャル使用回数
+
+      - name: A4_inked
+        description: A4塗りポイント
+
+      - name: A4_abilities
+        description: A4アビリティ
+
+      - name: B1_weapon
+        description: B1ブキ
+
+      - name: B1_kill_assist
+        description: B1キル・アシスト数合計
+
+      - name: B1_kill
+        description: B1キル数
+
+      - name: B1_assist
+        description: B1アシスト数
+
+      - name: B1_death
+        description: B1デス数
+
+      - name: B1_special
+        description: B1スペシャル使用回数
+
+      - name: B1_inked
+        description: B1塗りポイント
+
+      - name: B1_abilities
+        description: B1アビリティ
+
+      - name: B2_weapon
+        description: B2ブキ
+
+      - name: B2_kill_assist
+        description: B2キル・アシスト数合計
+
+      - name: B2_kill
+        description: B2キル数
+
+      - name: B2_assist
+        description: B2アシスト数
+
+      - name: B2_death
+        description: B2デス数
+
+      - name: B2_special
+        description: B2スペシャル使用回数
+
+      - name: B2_inked
+        description: B2塗りポイント
+
+      - name: B2_abilities
+        description: B2アビリティ
+
+      - name: B3_weapon
+        description: B3ブキ
+
+      - name: B3_kill_assist
+        description: B3キル・アシスト数合計
+
+      - name: B3_kill
+        description: B3キル数
+
+      - name: B3_assist
+        description: B3アシスト数
+
+      - name: B3_death
+        description: B3デス数
+
+      - name: B3_special
+        description: B3スペシャル使用回数
+
+      - name: B3_inked
+        description: B3塗りポイント
+
+      - name: B3_abilities
+        description: B3アビリティ
+
+      - name: B4_weapon
+        description: B4ブキ
+
+      - name: B4_kill_assist
+        description: B4キル・アシスト数合計
+
+      - name: B4_kill
+        description: B4キル数
+
+      - name: B4_assist
+        description: B4アシスト数
+
+      - name: B4_death
+        description: B4デス数
+
+      - name: B4_special
+        description: B4スペシャル使用回数
+
+      - name: B4_inked
+        description: B4塗りポイント
+
+      - name: B4_abilities
+        description: B4アビリティ
+
+      - name: medal1_grade
+        description: メダル1グレード
+
+      - name: medal1_name
+        description: メダル1名前
+
+      - name: medal2_grade
+        description: メダル2グレード
+
+      - name: medal2_name
+        description: メダル2名前
+
+      - name: medal3_grade
+        description: メダル3グレード
+
+      - name: medal3_name
+        description: メダル3名前
+
+      - name: event_name
+        description: イベント
+
+
+  - name: mart_kill_rate
+    description: 1レコードに存在する8人分のキルレートを8レコードに分割
+    columns:
+      - name: battle_id
+        description: バトルID
+      - name: season
+        description: シーズン
+      - name: battle_period
+        description: ピリオド
+      - name: win
+        description: 勝利チーム
+      - name: team
+        description: チーム
+      - name: member_id
+        description: メンバーID
+      - name: weapon
+        description: ブキ
+      - name: kill_assist
+        description: キル・アシスト数合計
+      - name: kill
+        description: キル数
+      - name: assist
+        description: アシスト数
+      - name: death
+        description: デス数
+      - name: special
+        description: スペシャル使用回数
+      - name: inked
+        description: 塗りポイント
+      - name: abilities
+        description: アビリティ
+
+  - name: mart_kill_rate_and_abilities
+    description: 1レコードに存在する8人分のキルレートを8レコードに分割し、更にアビリティ１つずつに分割
+    columns:
+      - name: battle_id
+        description: バトルID
+      - name: season
+        description: シーズン
+      - name: battle_period
+        description: ピリオド
+      - name: win
+        description: 勝利チーム
+      - name: team
+        description: チーム
+      - name: member_id
+        description: メンバーID
+      - name: weapon
+        description: ブキ
+      - name: kill_assist
+        description: キル・アシスト数合計
+      - name: kill
+        description: キル数
+      - name: assist
+        description: アシスト数
+      - name: death
+        description: デス数
+      - name: special
+        description: スペシャル使用回数
+      - name: inked
+        description: 塗りポイント
+      - name: abilities
+        description: アビリティ
+      - name: ability_name
+        description: アビリティ名
+      - name: ability_value
+        description: アビリティポイント
+
+  - name: mart_weapon_list
+    description: ブキマスタ
+    columns:
+      - name: weapon
+        description: ブキ        
