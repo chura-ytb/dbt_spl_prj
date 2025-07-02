@@ -7,6 +7,12 @@ models:
       - name: battle_id
         description: バトルID
 
+      - name: season
+        description: シーズン
+
+      - name: battle_period
+        description: ピリオド
+
       - name: win
         description: 勝利チーム
 

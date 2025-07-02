@@ -6,6 +6,10 @@ models:
     columns: 
       - name: battle_id
         description: バトルID
+      - name: season
+        description: シーズン
+      - name: battle_period
+        description: ピリオド
       - name: win
         description: 勝利チーム
       - name: team
@@ -28,10 +32,16 @@ models:
     columns:
       - name: battle_id
         description: バトルID
+      - name: season
+        description: シーズン
+      - name: battle_period
+        description: ピリオド
       - name: win
         description: 勝利チーム
       - name: team
         description: 所属チーム
+      - name: member_id
+        description: メンバーID        
       - name: weapon
         description: ブキ
       - name: kill_assist
@@ -58,5 +68,5 @@ models:
   - name: int_weapon_list
     description: ブキ一覧テーブル（重複削除）
     columns:
-      - name: weapons
+      - name: weapon
         description: ブキ名
